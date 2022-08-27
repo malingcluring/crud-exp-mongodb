@@ -1,0 +1,11 @@
+mongodb
+login email: id-wawan.setiawan@gmail.com (login with gmail)
+organization name: malingcluring
+
+mongodb atlas cloud GCP Jakarta Free
+username: malingcluring
+password: akew990505
+
+my local environment
+IP List:
+182.253.127.54/32
