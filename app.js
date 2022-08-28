@@ -46,8 +46,8 @@ MongoClient.connect(connectionString, {
             .then(function (result) {
                 console.log(result);
 
-                // REDIRECT TO "http://localhost:3030/view-quotes" PAGE AFTER PROCCESSING SUBMIT DATA 
-                res.redirect('/view-quotes');
+                // REDIRECT TO "http://localhost:3030/view" PAGE AFTER PROCCESSING SUBMIT DATA 
+                res.redirect('/view');
             })
             .catch(function (error) {
                 console.error(error)
@@ -71,7 +71,7 @@ MongoClient.connect(connectionString, {
     // UPDATE SELECTED QUOTE
     app.put('/quotes', function (req, res) {
         quoteCollection.findOneAndUpdate(
-            { name: 'apta' },
+            { name: 'kawan lama' },
             {
                 $set: {
                     name: req.body.name,
@@ -91,19 +91,17 @@ MongoClient.connect(connectionString, {
     });
 
     // DELETE SELECTED QUOTE
-    app.delete('/quotes', function (req, res) {
-        quoteCollection.deleteOne({
-            name: req.body.name
-        })
-            .then(function (result) {
+    app.delete('/quotes', (req, res) => {
+        quoteCollection.deleteOne(
+            { name: req.body.name }
+        )
+            .then(result => {
                 if (result.deletedCount === 0) {
                     return res.json('No quote to delete')
                 }
-                res.json(`Deleted Darth Vader's quote`)
+                res.json('Deleted Darth Vadar\'s quote')
             })
-            .catch(function (error) {
-                console.error(error)
-            })
+            .catch(error => console.error(error))
     })
 
 });

@@ -1,7 +1,7 @@
-const { response } = require("express");
+// const { response } = require("express");
 
 const updateBtn = document.querySelector('#updateBtn');
-const deleteBtn = document.querySelector('#deleteBtn');
+const deleteButton = document.querySelector('#deleteBtn');
 const messageDiv = document.querySelector('#message');
 
 updateBtn.addEventListener('click', function () {
@@ -11,7 +11,7 @@ updateBtn.addEventListener('click', function () {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            name: 'Darth Maul',
+            name: 'informa',
             quote: 'I find your lack of faith disturbing',
         })
     })
@@ -19,32 +19,27 @@ updateBtn.addEventListener('click', function () {
             if (res.ok) return res.json();
         })
         .then(response => {
-            window.location.reload(true);
+            window.location.reload(true)
         });
 });
 
-deleteBtn.addEventListener('click', function () {
-    fetch('/quote', {
+deleteButton.addEventListener('click', _ => {
+    fetch('/quotes', {
         method: 'delete',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            name: 'Darth Vader'
+            name: 'informa'
         })
     })
         .then(res => {
             if (res.ok) return res.json()
         })
-        .then(response=>{
-            if(response === 'No quote to delete') {
-                messageDiv.textContent = 'No Darth vader quote to delete'
-            }
-            else {
+        .then(response => {
+            if (response === 'No quote to delete') {
+                messageDiv.textContent = 'No Darth Vadar quote to delete'
+            } else {
                 window.location.reload(true)
             }
         })
-        .then(data => {
-            window.location.reload(true)
-        })
-});
+        .catch(console.error)
+})
