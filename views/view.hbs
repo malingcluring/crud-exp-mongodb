@@ -1,0 +1,17 @@
+<ul>
+    {{#each quotes}}
+    <li>
+        <div>
+            nama: <span>{{this.name}}</span>
+        </div>
+        <div>
+            quote: <span>{{this.quote}}</span>
+        </div>
+    </li>
+    {{/each}}
+</ul>
+
+<button type="button" id="updateBtn">Update</button>
+<button type="button" id="deleteBtn">Delete</button>
+
+<div id="message"></div>
