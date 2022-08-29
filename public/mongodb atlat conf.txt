@@ -14,7 +14,10 @@ database: Cluster0
 
 my local environment
 IP List:
+leno: 
 182.253.127.54/32
+hw:
+103.195.56.230
 
 mongodb connection string to application (Node.js v 4.1 or later)
 ================================================================================================

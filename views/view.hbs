@@ -7,6 +7,11 @@
         <div>
             quote: <span>{{this.quote}}</span>
         </div>
+        <div class="action">
+            <span>action</span>
+            <span><a href="/quotes/update/:{{this.name}}" class="update">edit</a></span>
+            <span><a href="/quotes/delete/;{{thus.name}}" class="delete">delete</a></span>
+        </div>
     </li>
     {{/each}}
 </ul>
